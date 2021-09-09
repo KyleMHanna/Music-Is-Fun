@@ -13,10 +13,14 @@ export default class Song {
   get Template() {
       return /*html*/`
     <div class="card bg-primary elevation-2">
+    <div class="card-header">
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
     <p>$${this.price} <button class='btn btn-danger' onclick="app.songsController.addSong('${this.id}')"></button></p>
+    </div>
+    <div class="card-body">
     <img src="${this.albumArt}">
+    </div>
     <audio src=${this.preview} controls></audio>
     </div>
         `
