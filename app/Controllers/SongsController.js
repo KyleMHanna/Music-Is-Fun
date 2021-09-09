@@ -14,7 +14,7 @@ document.getElementById('songs').innerHTML = template
 
 function _drawPlaylist() {
 let template = ''
-ProxyState.songs.forEach(p => template += p.playlistTemplate)
+ProxyState.playlist.forEach(p => template += p.playlistTemplate)
 document.getElementById('playlist').innerHTML = template
 }
 
@@ -24,7 +24,9 @@ document.getElementById('playlist').innerHTML = template
 export default class SongsController {
   constructor() {
     ProxyState.on('songs', _drawResults)
-    ProxyState.on('playlist',_drawPlaylist)
+    ProxyState.on('playlist', _drawPlaylist)
+    _drawPlaylist()
+
     
     //TODO Don't forget to register your listeners and get your data
   }

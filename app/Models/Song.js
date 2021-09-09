@@ -27,10 +27,9 @@ export default class Song {
     <div class="card bg-primary elevation-2">
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
-    <h2>$${this.price}</h2>
-    <p>${this.album}<p>
+    <p>$${this.price}</p>
+    <img src="${this.albumArt}">
     <audio src=${this.preview} controls></audio>
-    <img class="albumArt" src="${this.albumArt}">
     </div>
     `
   }
