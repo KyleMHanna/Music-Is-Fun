@@ -1,4 +1,4 @@
-import songService from "../Services/SongsService.js";
+import  songService from "../Services/SongsService.js";
 import { ProxyState } from "../AppState.js";
 
 //Private
@@ -12,7 +12,11 @@ document.getElementById('songs').innerHTML = template
 
 
 
-function _drawPlaylist() { }
+function _drawPlaylist() {
+let template = ''
+ProxyState.songs.forEach(p => template += p.playlistTemplate)
+document.getElementById('playlist').innerHTML = template
+}
 
 
 
@@ -20,6 +24,7 @@ function _drawPlaylist() { }
 export default class SongsController {
   constructor() {
     ProxyState.on('songs', _drawResults)
+    ProxyState.on('playlist',_drawPlaylist)
     
     //TODO Don't forget to register your listeners and get your data
   }
@@ -39,7 +44,11 @@ export default class SongsController {
    * Takes in a song id and sends it to the service in order to add it to the users playlist
    * @param {string} id
    */
-  addSong(id) { }
+  addSong(id) {
+    songService.addSong(id)
+
+  
+  }
 
   /**
    * Takes in a song id to be removed from the users playlist and sends it to the server
