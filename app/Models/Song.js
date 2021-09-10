@@ -19,9 +19,9 @@ export default class Song {
     <p>$${this.price} <button class='btn btn-danger' onclick="app.songsController.addSong('${this.id}')"></button></p>
     </div>
     <div class="card-body">
-    <img src="${this.albumArt}">
+    <img class="img-fluid" src="${this.albumArt}">
     </div>
-    <audio src=${this.preview} controls></audio>
+    <audio  src=${this.preview} controls></audio>
     </div>
         `
   }
@@ -32,8 +32,8 @@ export default class Song {
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
     <p>$${this.price}</p>
-    <img src="${this.albumArt}">
-    <audio src=${this.preview} controls></audio>
+    <img  class="img-fluid" src="${this.albumArt}">
+    <audio  src=${this.preview} controls></audio>
     </div>
     `
   }
