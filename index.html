@@ -7,47 +7,48 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/style/main.css">
     <title>music-is-fun</title>
 </head>
 
-<body>
+<body class="canvas ">
     <header>
-        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-            <a class="navbar-brand" href="#">
-                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
-                <span class="ml-2">music-is-fun</span>
-            </a>
-        </nav>
+
     </header>
-    <main class="container-fluid">
-        <section class="row">
-            <div class="col-12 bannerStyle">
-        
-            </div>
-            <div class=" col-md-6 mb-5">
+
+    <main id=""  class="container-fluid bg-light">
+            <section class="row content-center">
+                <div class="col-md-3"></div>
+            <div class=" col-md-6 mb-5 content-center">
                 <form onsubmit="app.songsController.search(event)">
-                    <input type="text" class="form-control" name="query" placeholder="Search For Music" />
-                    <button class="btn btn-danger mt-1 form-control" type="submit">
+                    <input type="text" class="form-control text-center" name="query" placeholder="🎵" />
+                    <button class="btn btn-success mt-1 form-control" type="submit">
                         Search
                     </button>
                 </form>
             </div>
         </section>
-
+        <div class="col-md-3"></div>
+        <div class="container-fluid">
         <section class="row">
-            <div class="col-md-6 text-center">
-                <div class="card-header bg-Secondary">  <h3 class="text-center">Search results</h3> </div>
+            <div class="col-md-5 text-center">
+                <div class="card-header bg-dark text-light">  <h3 class="text-center">Search results</h3> </div>
                 <div id="songs" >
-                    <!-- template to generate -->
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <div class=" p-3 mb-2 bg-Secondary text-dark">  <h3 class="text-center">Playlist</h3> </div>
+            <div class="col-md-2 text-center">
+            
+            <i class="mdi mdi-apple mdi-48px text-dark mx-1 aria-hidden="true"></i>
+            
+            </div>
+    
+            <div class="col-md-5 text-center">
+                <div class=" card-header mb-5 bg-success">  <h3 class="text-center">Playlist</h3> </div>
                 <div  id="playlist">
                     <!-- template for playlist -->
                 </div>
+            </div>
             </div>
         </section>
     </main>

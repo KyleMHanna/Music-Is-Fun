@@ -5,6 +5,8 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ 
 :root {
   --blue: blue;
   --indigo: indigo;
@@ -133,6 +135,18 @@ strong {
 
 small {
   font-size: 80%;
+}
+.StarBackround {
+  background-image: url(https://i.pinimg.com/originals/bb/ae/91/bbae919ec6b9852d23145cf855ca4f05.jpg);
+  background-size: cover;
+
+}
+canvas {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
 }
 
 sub,
