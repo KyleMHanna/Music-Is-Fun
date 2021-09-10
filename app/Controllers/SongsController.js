@@ -27,6 +27,8 @@ export default class SongsController {
     ProxyState.on('playlist', _drawPlaylist)
     _drawPlaylist()
 
+  
+
     
     //TODO Don't forget to register your listeners and get your data
   }
@@ -46,12 +48,11 @@ export default class SongsController {
    * Takes in a song id and sends it to the service in order to add it to the users playlist
    * @param {string} id
    */
-  async addSong(id) {
-    try {
-    await songService.addSong(id)
-    } catch (error) {
-      
-    }
+    addSong(id) {
+    
+    songService.addSong(id)
+  
+    
 
   
   }
@@ -60,12 +61,10 @@ export default class SongsController {
    * Takes in a song id to be removed from the users playlist and sends it to the server
    * @param {string} id
    */
-  async removeSong(id) {
-    try {
-      await songService.removeSong(id)
-      
-    } catch (error) {
-      
-    }
+  removeSong(id) {
+    
+  songService.removeSong(id)
+  
+  
   }
 }

@@ -12,11 +12,12 @@ export default class Song {
 
   get Template() {
       return /*html*/`
-    <div class="card bg-primary elevation-2">
+    <div class="card bg-Secondary elevation-2">
+  
     <div class="card-header">
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
-    <p>$${this.price} <button class='btn btn-danger' onclick="app.songsController.addSong('${this.id}')"></button></p>
+    <p>$${this.price} <button class='btn btn-outline-success' onclick="app.songsController.addSong('${this.id}')">Add song to playlist</button></p>
     </div>
     <div class="card-body">
     <img class="img-fluid" src="${this.albumArt}">
@@ -28,10 +29,11 @@ export default class Song {
 
   get playlistTemplate() {
     return /*html*/`
-    <div class="card bg-primary elevation-2">
+    <div class="card bg- elevation-2">
+ 
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
-    <p>$${this.price}</p>
+    <p>$${this.price} <button class='btn btn-outline-danger' onclick="app.songsController.removeSong('${this.id}')">Remove from playlist</button></p>
     <img  class="img-fluid" src="${this.albumArt}">
     <audio  src=${this.preview} controls></audio>
     </div>

@@ -2,11 +2,19 @@ import { ProxyState } from "../AppState.js";
 import Song from "../Models/Song.js";
 import { sandBoxApi } from "./AxiosService.js";
 
+
+const api = axios.create({
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/Kyle/songs'
+})
+
 class SongsService {
-  /**
-   * Takes in a search query and retrieves the results that will be put in the store
-   * @param {string} query
-   */
+  constructor(){
+  this.getMySongs()
+  }
+  
+  
+  
+
   getMusicByQuery(query) {
     //NOTE You will not need to change this method
     let url = "https://itunes.apple.com/search?callback=?&term=" + query;
@@ -26,6 +34,8 @@ class SongsService {
    */
   async getMySongs() {
     //TODO What are you going to do with this result
+      let res= await sandBoxApi.get()
+  ProxyState.playlist = res.data.map(s => new Song(s))
   }
 
   /**
@@ -47,9 +57,10 @@ class SongsService {
    * Afterwords it will update the store to reflect saved info
    * @param {string} id
    */
-  removeSong(id) {
-    //TODO Send the id to be deleted from the server then update the store
+  async removeSong(id) {
 
+  await api.delete(id)
+  ProxyState.playlist= ProxyState.playlist.filter(c=>c.id !== id)
     
   }
 }
