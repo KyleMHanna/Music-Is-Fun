@@ -12,7 +12,7 @@ export default class Song {
 
   get Template() {
       return /*html*/`
-    <div class="card bg-Primary elevation-2">
+    <div class="card mb-3 bg-Primary elevation-2">
   
     <div class="card-header">
     <h3>${this.title}</h3>
@@ -29,7 +29,7 @@ export default class Song {
 
   get playlistTemplate() {
     return /*html*/`
-    <div class="card bg-Primary elevation-2">
+    <div class="card mb-3 bg-Primary elevation-2">
     <h3>${this.title}</h3>
     <h2>${this.artist}</h2>
     <p>$${this.price} <button class='btn btn-outline-danger' onclick="app.songsController.removeSong('${this.id}')">Remove from playlist</button></p>
